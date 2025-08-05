@@ -5,7 +5,7 @@ import java.time.Period;
 import java.util.Scanner;
 
 public class Lab15 {
-	private static CharSequence dobInput;
+	
 	public static int calcAge(LocalDate dob) {
 		LocalDate currdate = LocalDate.now();
 		if(dob != null ) {
