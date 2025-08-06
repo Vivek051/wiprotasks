@@ -1,6 +1,6 @@
 package com.cg.eis.service;
 
-public class lab3_5 {
+public class lab2_5 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
