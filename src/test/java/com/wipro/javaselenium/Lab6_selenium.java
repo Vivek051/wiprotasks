@@ -53,7 +53,7 @@ public class Lab6_selenium {
 		Thread.sleep(3000);
 		driver.findElement(By.id("cart-total")).click();
 		driver.findElement(By.xpath("//*[@id=\"cart\"]/ul/li[2]/div/p/a[1]/strong")).click();
-		System.out.println("'Products marked with *** are not available in the desired quantity or not in stock!'");
+		System.out.println("'Products markd with *** are not available in the desired quantity or not in stock!'");
 		driver.findElement(By.linkText("Checkout")).click();
 		
 		Thread.sleep(3000);
