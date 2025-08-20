@@ -1,48 +1,46 @@
 package com.wipro.javaselenium;
 
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.BeforeClass;
-
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.AfterSuite;
-
-public class Lab8_3_1 {
+public class Lab11_4_TestNG_Pagefactory {
 	WebDriver driver;
+
 	@Test(dataProvider = "dp")
-	public void f() throws InterruptedException {
+
+	public void f(String searchItem) throws InterruptedException {
 		String title = driver.getTitle();
 		System.out.println("Title : " + title);
-		
+
 		Assert.assertEquals(driver.getTitle(), "Account Login");
-		Lab11_3_POM obj = new Lab11_3_POM(driver);
-		/* driver.findElement(By.linkText("Desktops")).click();
-		driver.findElement(By.linkText("Mac (1)")).click();
-		WebElement sort=driver.findElement(By.id("input-sort"));
-		  Select sle=new Select(sort);
-		  sle.selectByIndex(1);
-		driver.findElement(By.xpath("//button[contains(@onclick,'cart.add')]")).click();
-		Thread.sleep(2000); */
+		Lab11_4_Pagefactory obj = PageFactory.initElements(driver, Lab11_4_Pagefactory.class);
 		obj.opendesktop();
 		obj.selectmac();
 		obj.sortelement();
 		obj.clicking();
+		obj.searchbox(searchItem);
+		obj.buttonclick();
+		obj.searchItem(searchItem);
+		obj.selectdescription();
+		obj.submitpage();
+		System.out.println("Search completed... ");
 	}
 
 	@BeforeMethod
@@ -65,8 +63,8 @@ public class Lab8_3_1 {
 	@DataProvider
 	public Object[][] dp() {
 		return new Object[][] {
-			new Object[] {  },
-			new Object[] {  }
+			new Object[] { "Mobile" },
+			new Object[] { "Monitors" }
 		};
 	}
 	@BeforeClass
@@ -98,6 +96,5 @@ public class Lab8_3_1 {
 	public void afterSuite() {
 		System.out.println("After Suite Execution");
 	}
-
-
 }
+

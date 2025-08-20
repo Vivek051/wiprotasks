@@ -1,66 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="edgedrivertest (failed)">
-    <parameter name="browser" value="edge"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wipro.javaselenium.Lab9_4">
+      <class name="com.wipro.javaselenium.TC012_dataxlsx">
         <methods>
-          <include name="f"/>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
           <include name="afterTest"/>
-          <include name="beforeSuite"/>
-          <include name="afterClass"/>
-          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
           <include name="afterMethod"/>
           <include name="beforeTest"/>
-        </methods>
-      </class> <!-- com.wipro.javaselenium.Lab9_4 -->
-      <class name="com.wipro.javaselenium.Lab9_3">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="afterTest"/>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
           <include name="afterSuite"/>
           <include name="f"/>
+          <include name="beforeSuite"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- com.wipro.javaselenium.Lab9_3 -->
+      </class> <!-- com.wipro.javaselenium.TC012_dataxlsx -->
     </classes>
-  </test> <!-- edgedrivertest (failed) -->
-  <test thread-count="5" parallel="tests" name="Chrometest(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.wipro.javaselenium.Lab9_4">
-        <methods>
-          <include name="f"/>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="afterTest"/>
-          <include name="beforeSuite"/>
-          <include name="afterClass"/>
-          <include name="afterSuite"/>
-          <include name="beforeTest"/>
-          <include name="afterMethod"/>
-        </methods>
-      </class> <!-- com.wipro.javaselenium.Lab9_4 -->
-      <class name="com.wipro.javaselenium.Lab9_3">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="afterTest"/>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
-          <include name="afterMethod"/>
-          <include name="beforeTest"/>
-          <include name="f"/>
-          <include name="afterSuite"/>
-        </methods>
-      </class> <!-- com.wipro.javaselenium.Lab9_3 -->
-    </classes>
-  </test> <!-- Chrometest(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

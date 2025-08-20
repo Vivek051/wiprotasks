@@ -1,26 +1,24 @@
 package com.wipro.javaselenium;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 
-	import io.github.bonigarcia.wdm.WebDriverManager;
+public class TC0012_TestNGTest_Pagefactory {
 
-	import org.testng.annotations.BeforeMethod;
-	import org.testng.annotations.AfterMethod;
-	import org.testng.annotations.DataProvider;
-	import org.testng.annotations.BeforeClass;
-	import org.openqa.selenium.By;
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.chrome.ChromeDriver;
-	import org.openqa.selenium.support.PageFactory;
-	import org.testng.annotations.AfterClass;
-	import org.testng.annotations.BeforeTest;
-	import org.testng.annotations.AfterTest;
-	import org.testng.annotations.BeforeSuite;
-	import org.testng.annotations.AfterSuite;
-
-	public class TC0012_TestNG {
-		WebDriver driver;
+	WebDriver driver;
 	  @Test(dataProvider = "dp")
 	  public void f(String username, String password) throws InterruptedException {
 		  	String title=driver.getTitle();
@@ -28,7 +26,7 @@ import org.testng.annotations.Test;
 			Thread.sleep(3000);
 			//WebElement username=driver.findElement(By.name("username"));
 			//username.sendKeys("Admin");
-			login_pageobject obj=new login_pageobject(driver);
+			login_pagefactory obj=PageFactory.initElements(driver, login_pagefactory.class);
 			obj.enterusernam(username);
 			obj.enterpassword(password);
 			obj.clickonlogin();
@@ -88,5 +86,4 @@ import org.testng.annotations.Test;
 		  System.out.println("After Suite");
 	  }
 
-	
-	}
+}
