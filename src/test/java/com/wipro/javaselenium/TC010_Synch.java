@@ -23,7 +23,7 @@ public class TC010_Synch {
 		
 		//for explicit
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.get("https://tutorialsninja.com/demo/index.php");
 		WebElement username = wait.until(ExpectedConditions.elementToBeClickable(By.name("username")));
 		username.sendKeys("Admin");
 		

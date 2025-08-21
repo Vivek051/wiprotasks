@@ -23,9 +23,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TC012_Exceldata {
 	WebDriver driver;
-  @Test(dataProvider = "dp")
-  public void f(String username, String password) throws InterruptedException {
-	  	String title=driver.getTitle();
+	@Test(dataProvider = "dp")
+	public void f(String username, String password) throws InterruptedException {
+		String title=driver.getTitle();
 		System.out.println("The Title is:"+title);
 		Thread.sleep(3000);
 		//WebElement username=driver.findElement(By.name("username"));
@@ -34,77 +34,77 @@ public class TC012_Exceldata {
 		obj.enterusernam(username);
 		obj.enterpassword(password);
 		obj.clickonlogin();
-	//	driver.findElement(By.name("username")).sendKeys(username);
+		//	driver.findElement(By.name("username")).sendKeys(username);
 		//driver.findElement(By.name("password")).sendKeys(password);
-	//	driver.findElement(By.xpath("//button[@type='submit']")).click();
-	  }
-@BeforeMethod
-public void beforeMethod() {
-	  System.out.println("Before method");
-	  WebDriverManager.chromedriver().setup();
+		//	driver.findElement(By.xpath("//button[@type='submit']")).click();
+	}
+	@BeforeMethod
+	public void beforeMethod() {
+		System.out.println("Before method");
+		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-}
-@AfterMethod
-public void afterMethod() {
-	  System.out.println("After method");
-	  driver.quit();
-}
+		driver.get("https://tutorialsninja.com/demo/index.php");
+	}
+	@AfterMethod
+	public void afterMethod() {
+		System.out.println("After method");
+		driver.quit();
+	}
 
 
-@DataProvider
-public Object[][] dp() throws IOException {
+	@DataProvider
+	public Object[][] dp() throws IOException {
 
- String[][] val =new String[3][2];
-	  
-	  String projectpath=System.getProperty("user.dir")  ;
-	  File file1=new File(projectpath+"\\data.xlsx");
-	  FileInputStream fs=new FileInputStream(file1);
-	  XSSFWorkbook workbook=new XSSFWorkbook(fs);
-	  XSSFSheet worksheet=workbook.getSheetAt(0);
-	  int rowcount=worksheet.getPhysicalNumberOfRows();
-	  System.out.println("rows:"+rowcount);
-	  
-	  for(int i=0; i<rowcount;i++)
-	  {
-		  val[i][0]=worksheet.getRow(i).getCell(0).getStringCellValue();
-	 
-		  val[i][1]=worksheet.getRow(i).getCell(1).getStringCellValue();
-	  }
-	  
-	  return val;
-	  
-    }
-  
-@BeforeClass
-public void beforeClass() {
-	  System.out.println("Before class");
-}
+		String[][] val =new String[3][2];
 
-@AfterClass
-public void afterClass() {
-	  System.out.println("After Class");
-}
+		String projectpath=System.getProperty("user.dir")  ;
+		File file1=new File(projectpath+"\\data.xlsx");
+		FileInputStream fs=new FileInputStream(file1);
+		XSSFWorkbook workbook=new XSSFWorkbook(fs);
+		XSSFSheet worksheet=workbook.getSheetAt(0);
+		int rowcount=worksheet.getPhysicalNumberOfRows();
+		System.out.println("rows:"+rowcount);
 
-@BeforeTest
-public void beforeTest() {
-	  System.out.println("Before Test");
-}
+		for(int i=0; i<rowcount;i++)
+		{
+			val[i][0]=worksheet.getRow(i).getCell(0).getStringCellValue();
 
-@AfterTest
-public void afterTest() {
-	  System.out.println("After Test");
-}
+			val[i][1]=worksheet.getRow(i).getCell(1).getStringCellValue();
+		}
 
-@BeforeSuite
-public void beforeSuite() {
-	  System.out.println("Before Suite");
-}
+		return val;
 
-@AfterSuite
-public void afterSuite() {
-	  System.out.println("After Suite");
-}
+	}
+
+	@BeforeClass
+	public void beforeClass() {
+		System.out.println("Before class");
+	}
+
+	@AfterClass
+	public void afterClass() {
+		System.out.println("After Class");
+	}
+
+	@BeforeTest
+	public void beforeTest() {
+		System.out.println("Before Test");
+	}
+
+	@AfterTest
+	public void afterTest() {
+		System.out.println("After Test");
+	}
+
+	@BeforeSuite
+	public void beforeSuite() {
+		System.out.println("Before Suite");
+	}
+
+	@AfterSuite
+	public void afterSuite() {
+		System.out.println("After Suite");
+	}
 
 
 }

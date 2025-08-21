@@ -49,7 +49,7 @@ public class Lab11_4_TestNG_Pagefactory {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
+		driver.get("https://tutorialsninja.com/demo/index.php");
 		System.out.println("Application launched successfully");
 	}
 

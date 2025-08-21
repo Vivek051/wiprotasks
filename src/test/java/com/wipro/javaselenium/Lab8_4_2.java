@@ -66,7 +66,7 @@ public class Lab8_4_2 {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
+		driver.get("https://tutorialsninja.com/demo/index.php");
 		System.out.println("Application launched successfully");
 	}
 

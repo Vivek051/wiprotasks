@@ -71,7 +71,7 @@ public void beforeMethod() {
 	  System.out.println("Before method");
 	  WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.get("https://tutorialsninja.com/demo/index.php");
 }
 @AfterMethod
 public void afterMethod() {

@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wipro.javaselenium.TC012_dataxlsx">
+      <class name="com.wipro.javaselenium.Labb14_TestNG">
         <methods>
-          <include name="afterTest"/>
-          <include name="beforeMethod"/>
+          <include name="afterClass"/>
           <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+          <include name="f"/>
+          <include name="afterSuite"/>
           <include name="afterMethod"/>
           <include name="beforeTest"/>
-          <include name="afterSuite"/>
-          <include name="f"/>
+          <include name="afterTest"/>
           <include name="beforeSuite"/>
-          <include name="afterClass"/>
         </methods>
-      </class> <!-- com.wipro.javaselenium.TC012_dataxlsx -->
+      </class> <!-- com.wipro.javaselenium.Labb14_TestNG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
