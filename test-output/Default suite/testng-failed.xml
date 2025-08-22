@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wipro.javaselenium.Labb14_TestNG">
+      <class name="com.wipro.javaselenium.Lab13_TestNG__ORxml">
         <methods>
-          <include name="afterClass"/>
+          <include name="loginTest" invocation-numbers="0 1"/>
           <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="f"/>
-          <include name="afterSuite"/>
-          <include name="afterMethod"/>
+          <include name="setup"/>
           <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="afterSuite"/>
+          <include name="teardown"/>
+          <include name="afterClass"/>
           <include name="beforeSuite"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- com.wipro.javaselenium.Labb14_TestNG -->
+      </class> <!-- com.wipro.javaselenium.Lab13_TestNG__ORxml -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

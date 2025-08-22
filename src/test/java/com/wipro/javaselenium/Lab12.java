@@ -5,28 +5,28 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
- 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
- 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 //import io.github.bonigarcia.wdm.WebDriverManager;
- 
+
 public class Lab12 {
- 
+
 	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
-Properties prob=new Properties();
-FileInputStream fis=new FileInputStream("C:\\Users\\vivek\\wipro\\wiproprogramming\\config.property");
-prob.load(fis);
-String url=prob.getProperty("url");
-String username=prob.getProperty("username");
-String password=prob.getProperty("password");
- 
- 
-		
+		Properties prob=new Properties();
+		FileInputStream fis=new FileInputStream("C:\\Users\\vivek\\wipro\\wiproprogramming\\config.property");
+		prob.load(fis);
+		String url=prob.getProperty("url");
+		String username=prob.getProperty("username");
+		String password=prob.getProperty("password");
+
+
+
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver=new ChromeDriver();
 		driver.get(url);
@@ -42,5 +42,5 @@ String password=prob.getProperty("password");
 
 
 	}
- 
+
 }
