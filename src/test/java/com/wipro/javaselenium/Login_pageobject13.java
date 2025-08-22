@@ -26,7 +26,7 @@ public class Login_pageobject13 {
 	
  
 	
-	File file = new File(projectpath+"\\data1.xml");
+	File file = new File(projectpath+"\\data2.xml");
  
 	 DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	 DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
