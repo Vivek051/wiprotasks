@@ -11,9 +11,9 @@ public class TC007_Lab7 {
 	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
-		System.out.println("Title :" + driver.getTitle());
 
 		driver.get("https://letcode.in/alert");
+		System.out.println("Title :" + driver.getTitle());
 
 		// for alert
 		driver.findElement(By.id("accept")).click();

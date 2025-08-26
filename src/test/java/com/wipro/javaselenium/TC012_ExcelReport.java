@@ -32,16 +32,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TC012_ExcelReport {
 	WebDriver driver;
-	 String projectpath=System.getProperty("user.dir")  ;
+	String projectpath=System.getProperty("user.dir")  ;
 
-  @Test(dataProvider = "dp")
-  public void f(String username, String password) throws InterruptedException, IOException {
-	  Thread.sleep(5000);	
-	  
-	  String title=driver.getTitle();
+	@Test(dataProvider = "dp")
+	public void f(String username, String password) throws InterruptedException, IOException {
+		Thread.sleep(5000);	
+
+		String title=driver.getTitle();
 		System.out.println("The Title is:"+title);
-		
-		
+
+
 		//Assert.assertEquals(title, "Amazon");
 		ExtentReports extent = new ExtentReports();
 		String reportpath = projectpath + "\\Augreport.html";
@@ -57,7 +57,7 @@ public class TC012_ExcelReport {
 			File destfile = new File(dest);
 			FileUtils.copyFile(src,destfile);
 			test.addScreenCaptureFromPath(dest);
-			
+
 		}
 		extent.flush();
 		Thread.sleep(3000);
@@ -65,74 +65,74 @@ public class TC012_ExcelReport {
 		obj.enterusernam(username);
 		obj.enterpassword(password);
 		obj.clickonlogin();
-		  }
-@BeforeMethod
-public void beforeMethod() {
-	  System.out.println("Before method");
-	  WebDriverManager.chromedriver().setup();
+	}
+	@BeforeMethod
+	public void beforeMethod() {
+		System.out.println("Before method");
+		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
-		driver.get("https://tutorialsninja.com/demo/index.php");
-}
-@AfterMethod
-public void afterMethod() {
-	  System.out.println("After method");
-	  driver.quit();
-}
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	}
+	@AfterMethod
+	public void afterMethod() {
+		System.out.println("After method");
+		driver.quit();
+	}
 
 
-@DataProvider
-public Object[][] dp() throws IOException {
+	@DataProvider
+	public Object[][] dp() throws IOException {
 
-String[][] val =new String[3][2];
-	  
-	  String projectpath=System.getProperty("user.dir")  ;
-	  File file1=new File(projectpath+"\\data.xlsx");
-	  FileInputStream fs=new FileInputStream(file1);
-	  XSSFWorkbook workbook=new XSSFWorkbook(fs);
-	  XSSFSheet worksheet=workbook.getSheetAt(0);
-	  int rowcount=worksheet.getPhysicalNumberOfRows();
-	  System.out.println("rows:"+rowcount);
-	  
-	  for(int i=0; i<rowcount;i++)
-	  {
-		  val[i][0]=worksheet.getRow(i).getCell(0).getStringCellValue();
-	 
-		  val[i][1]=worksheet.getRow(i).getCell(1).getStringCellValue();
-	  }
-	  
-	  return val;
-	  
-  }
+		String[][] val =new String[3][2];
 
-@BeforeClass
-public void beforeClass() {
-	  System.out.println("Before class");
-}
+		String projectpath=System.getProperty("user.dir")  ;
+		File file1=new File(projectpath+"\\data.xlsx");
+		FileInputStream fs=new FileInputStream(file1);
+		XSSFWorkbook workbook=new XSSFWorkbook(fs);
+		XSSFSheet worksheet=workbook.getSheetAt(0);
+		int rowcount=worksheet.getPhysicalNumberOfRows();
+		System.out.println("rows:"+rowcount);
 
-@AfterClass
-public void afterClass() {
-	  System.out.println("After Class");
-}
+		for(int i=0; i<rowcount;i++)
+		{
+			val[i][0]=worksheet.getRow(i).getCell(0).getStringCellValue();
 
-@BeforeTest
-public void beforeTest() {
-	  System.out.println("Before Test");
-}
+			val[i][1]=worksheet.getRow(i).getCell(1).getStringCellValue();
+		}
 
-@AfterTest
-public void afterTest() {
-	  System.out.println("After Test");
-}
+		return val;
 
-@BeforeSuite
-public void beforeSuite() {
-	  System.out.println("Before Suite");
-}
+	}
 
-@AfterSuite
-public void afterSuite() {
-	  System.out.println("After Suite");
-}
+	@BeforeClass
+	public void beforeClass() {
+		System.out.println("Before class");
+	}
+
+	@AfterClass
+	public void afterClass() {
+		System.out.println("After Class");
+	}
+
+	@BeforeTest
+	public void beforeTest() {
+		System.out.println("Before Test");
+	}
+
+	@AfterTest
+	public void afterTest() {
+		System.out.println("After Test");
+	}
+
+	@BeforeSuite
+	public void beforeSuite() {
+		System.out.println("Before Suite");
+	}
+
+	@AfterSuite
+	public void afterSuite() {
+		System.out.println("After Suite");
+	}
 
 
 }
