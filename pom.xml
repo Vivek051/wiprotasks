@@ -110,7 +110,7 @@
             <version>3.2.5</version>
             <configuration>
                 <suiteXmlFiles>
-                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                    <suiteXmlFile>testngQuestion9.xml</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
         </plugin>
