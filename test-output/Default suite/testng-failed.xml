@@ -3,19 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wipro.javaselenium.TC012_ExcelReport">
+      <class name="com.orangehrm.test.LoginOrangeHRM">
         <methods>
-          <include name="f" invocation-numbers="0 1 2"/>
-          <include name="beforeClass"/>
-          <include name="afterTest"/>
-          <include name="afterSuite"/>
-          <include name="beforeSuite"/>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="beforeTest"/>
-          <include name="afterClass"/>
+          <include name="Question2" invocation-numbers="0"/>
+          <include name="flushreport"/>
+          <include name="setupreport"/>
+          <include name="setup"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.wipro.javaselenium.TC012_ExcelReport -->
+      </class> <!-- com.orangehrm.test.LoginOrangeHRM -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

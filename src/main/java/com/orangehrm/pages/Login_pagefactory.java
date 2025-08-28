@@ -7,13 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Login_pagefactory {
     
-    WebDriver driver;
     
-    // ✅ Constructor
-    public Login_pagefactory(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this); // important!
-    }
+  
+
+	
 
     // Elements
     @FindBy(name="username")
@@ -21,8 +18,10 @@ public class Login_pagefactory {
 
     @FindBy(name="password")
     WebElement pword;
-
-    @FindBy(xpath="//button[@type='submit']")
+//
+//    @FindBy(xpath="//button[@type='submit']")
+//    WebElement loginbutton;
+    @FindBy(xpath="//*[@id=\"login\"]/button/i")
     WebElement loginbutton;
 
     // Actions
