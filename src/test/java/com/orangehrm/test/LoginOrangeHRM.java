@@ -29,15 +29,16 @@ public class LoginOrangeHRM extends Basetest {
 	static String projectpath = System.getProperty("user.dir");
 
 	@Test(dataProvider = "loginData1")
-	public void verifylogin(String username, String password) throws IOException, ParserConfigurationException, SAXException {
+	public void verifylogin(String username, String password) throws IOException, ParserConfigurationException, SAXException, InterruptedException {
 		navigateurl("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
+       
 		test = extent.createTest("Login with the user: " + username);
 		login = new Loginpage(driver); 
 		login.EnterUserName(username);
 		login.Enterpassword(password);
+		 Thread.sleep(3000);
 		login.Clickonlogin();
-
+         
 		String actualtitle = driver.getTitle();
 		if (actualtitle.equalsIgnoreCase("OrangeHR")) {
 			test.pass("Login Successful and title is matched: " + actualtitle);
@@ -201,9 +202,10 @@ public class LoginOrangeHRM extends Basetest {
 	  }
 
 	 @Test
-	  public void Question9() throws IOException {
+	  public void Question9() throws IOException, InterruptedException {
 		  
 			navigateurl("https://www.wikipedia.org/");
+			Thread.sleep(3000);
 			test = extent.createTest("Capture Home page Screenshot");
 			File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			String dest = projectpath +"\\homepage.png";
