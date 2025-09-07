@@ -11,7 +11,7 @@ public class ExtentManager {
 	{
 		if(extent==null)
 		{
-			String reportpath=projectpath+"\\wiproprogramming\\Reports\\ReportsAugreport.html";
+			String reportpath=projectpath+"\\Capsotne_ProjectOrangeHRM\\src\\test\\resources\\OrangeHRMReports\\Reports.html";
 			ExtentSparkReporter spark=new ExtentSparkReporter(reportpath);
 			 extent = new ExtentReports(); 
 			extent.attachReporter(spark);
